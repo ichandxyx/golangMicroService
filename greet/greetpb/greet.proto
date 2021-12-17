@@ -17,3 +17,18 @@ service GreetService{
     // unary
     rpc Greet(GreetRequest) returns (GreetResponse) {};
 }
+
+message Add {
+    int32 first_number = 1;
+    int32 second_number = 2;
+}
+message AddRequest {
+    Add numbers = 1;
+}
+message AddResponse {
+    Add result = 1;
+}
+
+service AddService {
+    rpc Add(AddRequest) returns (AddResponse) {};
+}
